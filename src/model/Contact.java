@@ -11,12 +11,12 @@ public class Contact {
     public Contact() {
     }
 
-    public Contact(String phoneNumber,String name, String gender, String address, String dateOfBirth, String email) {
+    public Contact(String phoneNumber,String name, String gender, String address, String facebook, String email) {
         this.phoneNumber = phoneNumber;
         this.name = name;
         this.gender = gender;
         this.address = address;
-        this.facebook = dateOfBirth;
+        this.facebook = facebook;
         this.email = email;
     }
 

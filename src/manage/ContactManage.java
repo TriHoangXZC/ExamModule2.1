@@ -121,7 +121,6 @@ public class ContactManage {
         System.out.println("Bạn muốn tìm theo số hay theo tên? (1 để tìm theo số, 2 để tìm theo tên)");
         int choice = sc.nextInt();
         sc.nextLine();
-        String regex = ".*" + findInput + ".*";
         Pattern pattern = Pattern.compile(findInput);
         Matcher matcher;
         if (choice == 1) {
@@ -169,12 +168,11 @@ public class ContactManage {
         } else {
             try {
                 BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-                String line = "";
+                String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     String[] output = line.split(",");
                     contactsList.add(new Contact(output[0], output[1], output[2], output[3], output[4], output[5]));
                 }
-//                System.out.println("Đọc thành công!");
             } catch (IOException e) {
                 System.err.println(e.getMessage());
             }
@@ -199,7 +197,6 @@ public class ContactManage {
         return matcher.find();
     }
 
-    ;
 
     public boolean checkRegexEmail(String email) {
         String regex = "^[a-zA-Z0-9]+@[a-z]+\\.(com|vn)+$";
